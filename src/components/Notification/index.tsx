@@ -49,8 +49,8 @@ export function Notification(props: NotificationProps) {
         />
       </div>
       <div className="w-full">
-        <h2 className="text-base">{label}</h2>
-        <p className="text-xs text-text-color">{text}</p>
+        <h2 className="text-base font-medium">{label}</h2>
+        <p className="text-xs font-light text-text-color">{text}</p>
         <progress className="progress" value={value} max="100"></progress>
       </div>
     </div>

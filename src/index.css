@@ -2,6 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    font-family: 'HelveticaNeueCyr', sans-serif;
+  }
+
+  @font-face {
+    font-family: 'HelveticaNeueCyr';
+    src: url('@fonts/HelveticaNeueCyr-Medium.eot');
+    src:
+      local('HelveticaNeueCyr-Medium'),
+      url('@fonts/HelveticaNeueCyr-Medium.eot?#iefix')
+        format('embedded-opentype'),
+      url('@fonts/HelveticaNeueCyr-Medium.woff') format('woff'),
+      url('@fonts/HelveticaNeueCyr-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'HelveticaNeueCyr';
+    src: url('@fonts/HelveticaNeueCyr-Light.eot');
+    src:
+      local('HelveticaNeueCyr-Light'),
+      url('@fonts/HelveticaNeueCyr-Light.eot?#iefix')
+        format('embedded-opentype'),
+      url('@fonts/HelveticaNeueCyr-Light.woff') format('woff'),
+      url('@fonts/HelveticaNeueCyr-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }
+}
+
 @layer components {
   .progress {
     @apply h-1.5 w-full appearance-none overflow-hidden rounded-[3px] bg-[#c7c9c8];
