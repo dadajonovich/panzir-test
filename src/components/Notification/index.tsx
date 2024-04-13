@@ -1,15 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { NotificationsContext } from '../Notifications/context';
 
 export type NotificationProps = {
+  id: number;
   label: string;
   status: 'succes' | 'error';
   text: string;
 };
 
 export function Notification(props: NotificationProps) {
-  const { label, status, text } = props;
+  const { id, label, status, text } = props;
   const [value, setValue] = useState<number>(100);
   const [mouseAbove, setMouseAbove] = useState<boolean>(false);
+  const { remove } = useContext(NotificationsContext);
 
   const handlerMouseEnter = () => {
     setMouseAbove(true);
@@ -28,7 +31,10 @@ export function Notification(props: NotificationProps) {
     return () => clearInterval(interval);
   }, [mouseAbove]);
 
-  if (value < 0) return null;
+  if (value < 0) {
+    remove(id);
+    return null;
+  }
 
   return (
     <div
