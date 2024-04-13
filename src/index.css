@@ -2,19 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
+@layer components {
   .progress {
-    width: 100%;
-    appearance: none;
-    overflow: hidden;
-    height: 6px;
-    border-radius: 3px;
-    background-color: #c7c9c8;
+    @apply h-1.5 w-full appearance-none overflow-hidden rounded-[3px] bg-[#c7c9c8];
   }
-
   .progress::-webkit-progress-value {
-    transition: width 300ms linear;
+    @apply rounded-[3px] transition-[width] duration-300 ease-linear;
     background: #4b4e51;
-    border-radius: 3px;
+  }
+  .notification {
+    @apply max-w-[400px] rounded-lg shadow-[0_4px_4px_0_rgba(0,0,0,0.25)];
   }
 }

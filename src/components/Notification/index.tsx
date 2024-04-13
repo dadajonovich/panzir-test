@@ -38,7 +38,7 @@ export function Notification(props: NotificationProps) {
 
   return (
     <div
-      className="flex"
+      className="notification flex gap-3 p-6"
       onMouseEnter={handlerMouseEnter}
       onMouseLeave={handlerMouseLeave}
     >
@@ -48,9 +48,9 @@ export function Notification(props: NotificationProps) {
           alt="status"
         />
       </div>
-      <div>
-        <h2>{label}</h2>
-        <p>{text}</p>
+      <div className="w-full">
+        <h2 className="text-base">{label}</h2>
+        <p className="text-xs text-text-color">{text}</p>
         <progress className="progress" value={value} max="100"></progress>
       </div>
     </div>

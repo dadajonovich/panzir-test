@@ -25,7 +25,7 @@ export const Notifications = () => {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [add]);
 
   return (
     <div className="m-7	flex	flex-col gap-7 rounded border border-dashed border-border-purple p-5">
