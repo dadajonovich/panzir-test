@@ -3,9 +3,9 @@ export const simulateServer = () => {
     if (Math.random() > 0.5) {
       return resolve();
     }
-    const t = window.setTimeout(() => {
+    const t = setTimeout(() => {
       reject();
-      return clearTimeout(t);
+      clearTimeout(t);
     }, 1000);
   });
 };
